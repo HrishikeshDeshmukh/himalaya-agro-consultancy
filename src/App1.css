@@ -1,0 +1,36 @@
+.three-line{
+    color: black;
+    display: none;
+}
+
+
+
+
+/* CSS for mobile view */
+@media only screen and (max-width: 767px) {
+  .nav-items {
+    /* display: flex; */
+    /* width: 100%;
+        justify-content: center; */
+  }
+
+  .nav-items {
+   /* display: none; */
+   
+  }
+
+  .three-line{
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav {
+    width: 100%;
+    margin-top: 80px;
+  }
+}
+
