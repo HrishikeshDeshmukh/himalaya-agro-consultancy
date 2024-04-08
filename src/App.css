@@ -1,0 +1,128 @@
+
+
+.nav-wrapper {
+  width: 100%;
+  height: auto;
+  position: relative;
+
+}
+
+.upper-nav-wrap {
+  background-color: #044823;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.wrap-1, .wrap-2 {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+ .ele {
+  color: white;
+  text-decoration: none;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+ }
+
+ .icon {
+  font-size: 17px;
+  padding: 0 2px;
+ }
+
+ .wrap-2 {
+  margin-right: 40px;
+ }
+
+ .lower-nav-wrap {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  background: white;
+ }
+
+ .logo {
+  display: flex;
+  align-items: center;
+  width: 75px;
+  position: relative;
+  margin: 0 30px;
+
+ }
+
+.right-btns {
+  display: flex;  
+  align-items: center;
+  margin-right: 30px;
+ }
+
+ .icons {
+  font-size: 22px;
+  margin: 0 15px;
+  color: #434242;
+ }
+
+ .nav-items {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+ }
+
+ nav {
+  display: flex !important;
+  position: fixed;
+  margin-top: 15px;
+  font-family: "Hind Siliguri", sans-serif;
+  
+ }
+
+ nav ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+  display: flex;
+
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+	color: #434242;
+	padding: 1rem;
+  font-size: 15px;
+  background: white;
+  transition: background 0.5s;
+  display: block;
+  outline: 0;
+  text-align: center;
+}
+
+nav a:hover,
+nav li:focus-within > a {
+	color: #044823;
+	cursor: pointer;
+  font-weight: 500;
+  transition: all ease-in-out .3s;
+}
+
+/* Make the dropdown animate. */
+.dropdown-content {
+  min-width: fit-content;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s;
+  display: block;
+}
+
+/* The max-height should be set to something that will always be a little bit bigger than the height of the content. */
+.dropdown:hover .dropdown-content,
+.dropdown:focus .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  max-height: 200px;
+}
