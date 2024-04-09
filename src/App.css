@@ -75,7 +75,7 @@
 
 nav {
   display: flex !important;
-  position: fixed;
+  position: absolute;
   margin-top: 15px;
   font-family: "Hind Siliguri", sans-serif;
   z-index: 111;
@@ -196,15 +196,15 @@ nav li:focus-within>a {
   height: 630px;
 }
 
-.embla__slide:nth-child(2) {
-  background-image: url(./assets/7.jpg);
+.embla__slide:nth-child(3) {
+  background-image: url(./assets/4.jpg);
   background-size: cover;
   background-position: center;
   height: 630px;
 }
 
-.embla__slide:nth-child(3) {
-  background-image: url(./assets/5.jpg);
+.embla__slide:nth-child(2) {
+  background-image: url(./assets/7.jpg);
   background-size: cover;
   background-position: center;
   height: 630px;
@@ -212,36 +212,29 @@ nav li:focus-within>a {
 
 }
 
-.embla__slide:nth-child(3) h1 {
+.embla__slide:nth-child(even) h1 {
   text-align: left;
   margin-left: 55px;
 }
 
-.embla__slide:nth-child(3) .info-wrap {
+.embla__slide:nth-child(even) .info-wrap {
   align-items: start;
 }
 
 
-.embla__slide:nth-child(3) .info-wrap p,
+.embla__slide:nth-child(even) .info-wrap p,
 button {
   text-align: left !important;
   margin-left: 55px;
 }
 
 .embla__slide:nth-child(4) {
-  background-image: url(./assets/1.jpg);
+  background-image: url(./assets/5.jpg);
   background-size: cover;
   background-position: center;
   height: 630px;
+  justify-content: left;
+  
 }
 
-.embla__slide:nth-child(4) .info-wrap {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: #f8d3a5;
-  text-align: center;
-  line-height: 300px;
-  /* Should be equal to the height of the container */
-  font-size: 24px;
-}
+
