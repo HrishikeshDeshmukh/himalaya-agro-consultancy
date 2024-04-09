@@ -12,6 +12,7 @@ const Navbar = () => {
 
   const handalnavbarOpen = () => {
     setIsNavOpen(true);
+    setIsSearchOpen(false);
   };
   const handalnavbarClose = () => {
     setIsNavOpen(false);
@@ -19,6 +20,7 @@ const Navbar = () => {
 
   const handalSearchOpen = () => {
     setIsSearchOpen(!isSearchOpen);
+    setIsNavOpen(false);
   };
 
   return (
@@ -186,12 +188,11 @@ const Navbar = () => {
         {isSearchOpen && (
           <div>
             <div className="input-head">
-              <input type="text" name="" id="" placeholder="Search Here..."/>
+              <input type="text" name="" id="" placeholder="Search Here..." />
               <FaSearch className="icons btn-search inner-search" />
             </div>
           </div>
         )}
-       
       </div>
     </>
   );
