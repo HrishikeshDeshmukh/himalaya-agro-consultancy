@@ -1,0 +1,134 @@
+.input-head {
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  outline: none;
+  overflow: hidden; /* Ensure content outside the box is hidden */
+}
+
+.input-head input {
+  position: relative;
+  width: 0; /* Start with width as 0 */
+  height: 80%;
+  background-color: aliceblue;
+  color: black;
+  text-align: center;
+  border-radius: 10px;
+  border-color: green;
+  animation: slideFromLeft 1s forwards; /* Apply the animation */
+}
+
+@keyframes slideFromLeft {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60%; /* Slide to 60% width */
+  }
+}
+@keyframes opacityforsearch {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.inner-search {
+  animation: opacityforsearch 3s ease-in-out;
+  position: absolute;
+  right: 20%;
+}
+
+.three-line {
+  color: black;
+  display: none;
+}
+
+.boldtext {
+  font-weight: bold;
+}
+
+.dropdown-content {
+  width: 100%;
+}
+
+/* CSS for mobile view */
+@media only screen and (max-width: 767px) {
+  .nav-items {
+    /* display: flex; */
+    /* width: 100%;
+        justify-content: center; */
+  }
+
+  .nav-items {
+    /* display: none; */
+  }
+
+  .three-line {
+    display: block;
+  }
+
+  @keyframes roll {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 80%;
+    animation: roll 0.4s ease-in-out;
+  }
+
+  nav {
+    width: 100%;
+    margin-top: 78px;
+  }
+
+  .hidediv {
+    display: none;
+  }
+
+  .cross {
+    font-weight: bolder;
+    font-size: 30px;
+  }
+
+  .upper-nav-wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wrap-1 {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .wrap-2 {
+    /* display: none; */
+    margin-top: 5px;
+    flex-wrap: wrap;
+  }
+
+  .wrap-1 .ele:nth-child(3) {
+    display: none;
+  }
+
+  .input-head input {
+    width: 90% !important;
+  }
+
+  .inner-search {
+    right: 5%;
+  }
+}
