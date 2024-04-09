@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdLocationPin, MdMarkEmailUnread } from "react-icons/md";
 import { FaPhone, FaCartShopping } from "react-icons/fa6";
 import { FaWhatsapp, FaFacebook, FaInstagram, FaSearch } from "react-icons/fa";
 import Logo from "../assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
+  const [isnavOpen, setIsNavOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const handalnavbarOpen = () => {
+    setIsNavOpen(true);
+  };
+  const handalnavbarClose = () => {
+    setIsNavOpen(false);
+  };
+
+  const handalSearchOpen = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+
   return (
     <>
       <div className="nav-wrappper">
@@ -43,14 +58,16 @@ const Navbar = () => {
 
           <div className="nav-items">
             <nav role="navigation">
-              <ul>
+              <ul className={isnavOpen ? "" : "hidediv"}>
                 <li>
-                  <a href="#">Home</a>
+                  <a href="#">
+                    <strong>Home</strong>
+                  </a>
                 </li>
                 <li className="dropdown">
                   <a href="#" aria-haspopup="true">
                     {" "}
-                    All Products
+                    <strong> All Products</strong>
                   </a>
                   <ul className="dropdown-content" aria-label="submenu">
                     <li>
@@ -66,7 +83,7 @@ const Navbar = () => {
                 </li>
                 <li className="dropdown">
                   <a href="#" aria-haspopup="true">
-                    Fresh Fruits
+                    <strong>Fresh Fruits</strong>
                   </a>
                   <ul className="dropdown-content" aria-label="submenu">
                     <li>
@@ -82,7 +99,7 @@ const Navbar = () => {
                 </li>
                 <li className="dropdown">
                   <a href="#" aria-haspopup="true">
-                    Vegetables
+                    <strong>Vegetables</strong>
                   </a>
                   <ul className="dropdown-content" aria-label="submenu">
                     <li>
@@ -99,7 +116,7 @@ const Navbar = () => {
 
                 <li className="dropdown">
                   <a href="#" aria-haspopup="true">
-                    About Us
+                    <strong> About Us</strong>
                   </a>
                   <ul className="dropdown-content" aria-label="submenu">
                     <li>
@@ -115,7 +132,7 @@ const Navbar = () => {
                 </li>
                 <li className="dropdown">
                   <a href="#" aria-haspopup="true">
-                    More
+                    <strong> More</strong>
                   </a>
                   <ul className="dropdown-content" aria-label="submenu">
                     <li>
@@ -130,10 +147,14 @@ const Navbar = () => {
                   </ul>
                 </li>
                 <li>
-                  <a href="#">News & Blogs</a>
+                  <a href="#">
+                    <strong>News & Blogs</strong>
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Contact Us</a>
+                  <a href="#">
+                    <strong>Contact Us</strong>
+                  </a>
                 </li>
               </ul>
             </nav>
@@ -141,12 +162,36 @@ const Navbar = () => {
 
           <div className="right-btns">
             <FaCartShopping className="icons" />
-            <FaSearch className="icons" />
-            {/* <div className=""> */}
-              <GiHamburgerMenu className="three-line"/>
-            {/* </div> */}
+
+            {isSearchOpen ? (
+              <RxCross2 className="icons cross" onClick={handalSearchOpen} />
+            ) : (
+              <FaSearch
+                className="icons btn-search"
+                onClick={handalSearchOpen}
+              />
+            )}
+
+            {isnavOpen ? (
+              <RxCross2 className="icons cross" onClick={handalnavbarClose} />
+            ) : (
+              <GiHamburgerMenu
+                className="three-line icons"
+                onClick={handalnavbarOpen}
+              />
+            )}
           </div>
         </div>
+
+        {isSearchOpen && (
+          <div>
+            <div className="input-head">
+              <input type="text" name="" id="" placeholder="Search Here..."/>
+              <FaSearch className="icons btn-search inner-search" />
+            </div>
+          </div>
+        )}
+       
       </div>
     </>
   );
