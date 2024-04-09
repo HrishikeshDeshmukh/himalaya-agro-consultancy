@@ -214,7 +214,7 @@ nav li:focus-within>a {
 
 .embla__slide:nth-child(even) h1 {
   text-align: left;
-  margin-left: 55px;
+  margin-left: 150px;
 }
 
 .embla__slide:nth-child(even) .info-wrap {
@@ -225,9 +225,13 @@ nav li:focus-within>a {
 .embla__slide:nth-child(even) .info-wrap p,
 button {
   text-align: left !important;
-  margin-left: 55px;
+  margin-left: 150px;
 }
 
+.embla__slide:nth-child(odd) .info-wrap
+button {
+  margin-left: 0;
+}
 .embla__slide:nth-child(4) {
   background-image: url(./assets/5.jpg);
   background-size: cover;
