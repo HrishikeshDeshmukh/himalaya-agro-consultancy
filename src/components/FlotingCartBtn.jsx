@@ -1,5 +1,17 @@
-import React from "react";
-import { Button, Input, useDisclosure } from "@chakra-ui/react";
+import React, { useState } from "react";
+import {
+  Button,
+  Card,
+  CardBody,
+  Flex,
+  Heading,
+  Image,
+  Input,
+  Stack,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { FaCartPlus } from "react-icons/fa";
 import {
   Drawer,
   DrawerBody,
@@ -9,10 +21,18 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from "@chakra-ui/react";
+import apple from "../assets/apple.png";
 
 const FlotingCartBtn = () => {
+  const [cartItem, setCartItem] = useState([
+    {
+      id: 1,
+      name: "Chetan",
+    },
+  ]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+
   return (
     <>
       <div className="floting-container">
@@ -47,18 +67,89 @@ const FlotingCartBtn = () => {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>Create your account</DrawerHeader>
+            <DrawerHeader>
+              <span className="cart-basket">
+                <FaCartPlus /> &nbsp;&nbsp; <span>Your Fresh Basket</span>
+              </span>
+            </DrawerHeader>
+            <hr />
 
             <DrawerBody>
-              <Input placeholder="Type here..." />
+              {/* <Input placeholder="Type here..." /> */}
+              {cartItem.length > 0 ? (
+                <>
+                  <Card border={"1px"}>
+                    <CardBody>
+                      <Flex gap={4}>
+                        <Stack>
+                          <Image
+                            src={apple}
+                            alt="chetan"
+                            w={"60px"}
+                            h={"60px"}
+                          />
+                        </Stack>
+                        <Stack>
+                          <Text
+                            bg={"red"}
+                            h={"50px"}
+                            w="full"
+                            overflowWrap={"break-word"}
+                            overflow={"hidden"}
+                          >
+                            APPLE
+                          </Text>
+                          
+                        </Stack>
+                      </Flex>
+                    </CardBody>
+                  </Card>
+                </>
+              ) : (
+                <>
+                  <Text textAlign="center" mt={"100px"}>
+                    Your cart is empty
+                  </Text>
+
+                  <Flex justify={"center"}>
+                    <Button
+                      mt={"10px"}
+                      size="sm"
+                      fontSize={{ base: "15px", md: "15px", lg: "15px" }}
+                      height="40px"
+                      border="2px"
+                      borderColor="green.500"
+                      className="btn-cart1"
+                      _hover={{
+                        backgroundColor: "#50b033",
+                        borderColor: "black",
+                      }}
+                    >
+                      RETURN TO SHOP
+                    </Button>
+                  </Flex>
+                </>
+              )}
             </DrawerBody>
 
             <DrawerFooter>
-              <Button variant="outline" mr={3} onClick={onClose}>
+              {/* <Button variant="outline" mr={3} onClick={onClose}>
                 Cancel
               </Button>
-              <Button colorScheme="blue">Save</Button>
+              <Button colorScheme="blue">Save</Button> */}
             </DrawerFooter>
+
+            <Button
+              size="md"
+              fontSize={{ base: "20px", md: "20px", lg: "20px" }}
+              height="48px"
+              border="2px"
+              borderColor="green.500"
+              className="btn-cart1"
+              _hover={{ backgroundColor: "#50b033", borderColor: "black" }}
+            >
+              CONTINUE
+            </Button>
           </DrawerContent>
         </Drawer>
       </div>

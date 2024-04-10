@@ -103,6 +103,7 @@ body {
 
 .btn-cart {
   display: flex;
+  /* for center div from height and width */
   align-items: center;
   justify-content: center;
   width: 50px;
@@ -163,9 +164,10 @@ body {
   z-index: 1;
   top: 60%;
   right: 10px;
+  /* display: flex; */
 }
 
-.cart-container{
+.cart-container {
   height: 100%;
   width: 30%;
   background-color: #000;
@@ -173,5 +175,20 @@ body {
   z-index: 300;
   top: 0%;
   right: 10px;
+}
 
+.cart-basket {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-cart1 {
+  margin: 0px 20px 10px 20px;
+  
+}
+
+.floting-cart-item{
+  display: flex;
 }
