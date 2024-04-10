@@ -4,8 +4,15 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import apple from "../assets/apple.png"
-import banana from "../assets/banana.png"
+import apple from "../assets/apple.png";
+import banana from "../assets/banana.png";
+import grapes from "../assets/grapes.png";
+import kiwi from "../assets/kiwi.png";
+import orange from "../assets/orange.png";
+import pineapple from "../assets/pineapple.png";
+import strobery from "../assets/strobery.png";
+import cherry from "../assets/cheery.png";
+import mango from "../assets/mango.png";
 
 const SwiperSlider = () => {
   return (
@@ -35,6 +42,10 @@ const SwiperSlider = () => {
         `}
       </style>
 
+      <div className="swiper-h2">
+        <h2>Fruits Gallery</h2>
+      </div>
+
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -57,59 +68,31 @@ const SwiperSlider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img
-            src={apple}
-            alt="nature-1"
-          />
+          <img src={apple} alt="nature-1" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src={banana}
-            alt="nature-2"
-            
-          />
+          <img src={banana} alt="nature-2" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-3.jpg"
-            alt="nature-3"
-          />
+          <img src={grapes} alt="nature-3" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-4.jpg"
-            alt="nature-4"
-          />
+          <img src={kiwi} alt="nature-4" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-5.jpg"
-            alt="nature-5"
-          />
+          <img src={orange} alt="nature-5" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-6.jpg"
-            alt="nature-6"
-          />
+          <img src={pineapple} alt="nature-6" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-7.jpg"
-            alt="nature-7"
-          />
+          <img src={strobery} alt="nature-7" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-8.jpg"
-            alt="nature-8"
-          />
+          <img src={cherry} alt="nature-8" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-9.jpg"
-            alt="nature-9"
-          />
+          <img src={mango} alt="nature-9" />
         </SwiperSlide>
       </Swiper>
     </>

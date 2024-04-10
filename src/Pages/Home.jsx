@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <Carousel />
-      <SwiperSlider/>
+      <SwiperSlider />
     </>
   );
 };
